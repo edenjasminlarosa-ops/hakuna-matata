@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { AuthProvider, useAuth } from './contexts/AuthContext';
 import { AuthPage } from './pages/AuthPage';
 import { PublicMarketplace } from './components/marketplace/PublicMarketplace';
-import { UserDashboard } from './components/dashboard/UserDashboard';
+import { EnhancedUserDashboard } from './components/dashboard/EnhancedUserDashboard';
 import { AdminDashboard } from './components/admin/AdminDashboard';
 
 function AppContent() {
@@ -41,7 +41,7 @@ function AppContent() {
     );
   }
 
-  return <UserDashboard />;
+  return <EnhancedUserDashboard />;
 }
 
 function App() {

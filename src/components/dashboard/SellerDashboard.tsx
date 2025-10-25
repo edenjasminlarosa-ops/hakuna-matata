@@ -2,7 +2,7 @@
 // import { Plus, Upload } from 'lucide-react';
 // import { supabase } from '../../lib/supabase';
 // import { useAuth } from '../../contexts/AuthContext';
-// import { DigitalAsset, Product, JobPosting, JobBid, EscrowTransaction } from '../../types';
+// import { DigitalAsset, Product, JobPosting, EscrowTransaction } from '../../types';
 
 // export const SellerDashboard = () => {
 //   const { user } = useAuth();
@@ -554,7 +554,7 @@ import { useState, useEffect } from 'react';
 import { Plus, Upload } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import { useAuth } from '../../contexts/AuthContext';
-import { DigitalAsset, Product, JobPosting, JobBid, EscrowTransaction } from '../../types';
+import { DigitalAsset, Product, JobPosting, EscrowTransaction } from '../../types';
 import './SellerDashboard.css'; // Import the new CSS file
 
 export const SellerDashboard = () => {

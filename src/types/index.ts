@@ -1,3 +1,17 @@
+export interface Profile {
+  id: string;
+  full_name: string | null;
+  email: string | null;
+  phone_number: string | null;
+  country: string | null;
+  role: 'admin' | 'user';
+  status: 'active' | 'suspended';
+  average_rating: number;
+  total_ratings: number;
+  email_verified: boolean;
+  created_at: string;
+}
+
 export interface Wallet {
   id: string;
   user_id: string;
@@ -44,6 +58,7 @@ export interface JobPosting {
   budget: number;
   category: string;
   status: 'open' | 'in_progress' | 'completed' | 'cancelled';
+  accepted_seller_id: string | null;
   created_at: string;
 }
 
@@ -65,9 +80,73 @@ export interface EscrowTransaction {
   reference_id: string;
   amount: number;
   commission: number;
-  status: 'active' | 'completed' | 'disputed' | 'refunded';
+  status: 'active' | 'completed' | 'disputed' | 'refunded' | 'cancelled';
   dispute_reason: string | null;
+  dispute_filed_by: 'buyer' | 'seller' | null;
   admin_notes: string | null;
+  resolution_notes: string | null;
+  created_at: string;
+  completed_at: string | null;
+  disputed_at: string | null;
+  resolved_at: string | null;
+}
+
+export interface Notification {
+  id: string;
+  user_id: string;
+  type: 'transaction' | 'message' | 'system' | 'rating' | 'dispute';
+  title: string;
+  message: string;
+  read: boolean;
+  reference_type: 'job' | 'transaction' | 'chat' | 'rating' | 'general' | null;
+  reference_id: string | null;
+  created_at: string;
+}
+
+export interface ChatConversation {
+  id: string;
+  transaction_id: string | null;
+  buyer_id: string;
+  seller_id: string;
+  admin_id: string | null;
+  status: 'active' | 'closed';
+  created_at: string;
+}
+
+export interface ChatMessage {
+  id: string;
+  conversation_id: string;
+  sender_id: string;
+  message: string;
+  attachment_url: string | null;
+  read_by_buyer: boolean;
+  read_by_seller: boolean;
+  read_by_admin: boolean;
+  created_at: string;
+}
+
+export interface Rating {
+  id: string;
+  transaction_id: string;
+  rated_user_id: string;
+  rater_user_id: string;
+  rating: number;
+  review_text: string | null;
+  created_at: string;
+}
+
+export interface PaymentTransaction {
+  id: string;
+  user_id: string;
+  type: 'deposit' | 'withdraw';
+  method: 'mpesa' | 'binance' | 'paypal' | 'airtm';
+  amount: number;
+  status: 'pending' | 'completed' | 'failed' | 'cancelled';
+  transaction_ref: string | null;
+  phone_number: string | null;
+  wallet_address: string | null;
+  email: string | null;
+  notes: string | null;
   created_at: string;
   completed_at: string | null;
 }

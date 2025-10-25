@@ -1,5 +1,5 @@
 // import { useState, useEffect } from 'react';
-// import { ShoppingBag, Briefcase, BookOpen, Package, Plus } from 'lucide-react';
+// import { ShoppingBag, Briefcase, Package, Plus } from 'lucide-react';
 // import { supabase } from '../../lib/supabase';
 // import { useAuth } from '../../contexts/AuthContext';
 // import { DigitalAsset, Product, JobPosting, Course, EscrowTransaction } from '../../types';
@@ -347,7 +347,7 @@
 
 
 import { useState, useEffect } from 'react';
-import { ShoppingBag, Briefcase, BookOpen, Package, Plus } from 'lucide-react';
+import { ShoppingBag, Briefcase, Package, Plus } from 'lucide-react';
 import { supabase } from '../../lib/supabase';
 import { useAuth } from '../../contexts/AuthContext';
 import { DigitalAsset, Product, JobPosting, EscrowTransaction } from '../../types';
